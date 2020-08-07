@@ -102,7 +102,7 @@
             "main": "apps/i-love-iac/infrastructure/index.ts",
             "provider": "azure",
             "pulumi": {
-              "azure:location": "northcentralus",
+              "azure:location": "westeurope",
               "useCdn": false
             }
           },
@@ -209,7 +209,7 @@
             "main": "apps/api/infrastructure/index.ts",
             "provider": "azure",
             "pulumi": {
-              "azure:location": "northcentralus"
+              "azure:location": "westeurope"
             }
           }
         },
@@ -250,7 +250,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/workspace": {
