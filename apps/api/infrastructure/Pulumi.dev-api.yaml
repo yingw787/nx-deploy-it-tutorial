@@ -1,0 +1,4 @@
+config:
+  api:distPath: /home/yingw787/src/advanced-deployments/dist/apps/api
+  api:projectName: api
+  azure:location: northcentralus
