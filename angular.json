@@ -107,7 +107,7 @@
             "main": "apps/i-love-iac/infrastructure/index.ts",
             "provider": "aws",
             "pulumi": {
-              "aws:profile": "ying.wang",
+              "aws:profile": "root",
               "aws:region": "us-east-1",
               "useCdn": false
             }
@@ -225,7 +225,7 @@
             "main": "apps/api/infrastructure/index.ts",
             "provider": "aws",
             "pulumi": {
-              "aws:profile": "ying.wang",
+              "aws:profile": "root",
               "aws:region": "us-east-1"
             }
           }

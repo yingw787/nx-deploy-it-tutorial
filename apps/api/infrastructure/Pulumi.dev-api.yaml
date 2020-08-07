@@ -1,0 +1,5 @@
+config:
+  api:distPath: /home/yingw787/src/advanced-deployments/dist/apps/api
+  api:projectName: api
+  aws:profile: root
+  aws:region: us-east-1
