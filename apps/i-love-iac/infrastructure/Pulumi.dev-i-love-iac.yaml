@@ -1,5 +1,0 @@
-config:
-  aws:profile: root
-  aws:region: us-east-1
-  i-love-iac:distPath: /home/yingw787/src/advanced-deployments/dist/apps/i-love-iac
-  i-love-iac:projectName: i-love-iac
