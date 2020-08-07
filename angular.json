@@ -95,6 +95,31 @@
             "passWithNoTests": true,
             "setupFile": "apps/i-love-iac/src/test-setup.ts"
           }
+        },
+        "deploy": {
+          "builder": "@dev-thought/nx-deploy-it:deploy",
+          "options": {
+            "main": "apps/i-love-iac/infrastructure/index.ts",
+            "provider": "azure",
+            "pulumi": {
+              "azure:location": "northcentralus",
+              "useCdn": false
+            }
+          },
+          "configurations": {
+            "production": {
+              "pulumi": {
+                "useCdn": true
+              }
+            }
+          }
+        },
+        "destroy": {
+          "builder": "@dev-thought/nx-deploy-it:destroy",
+          "options": {
+            "main": "apps/i-love-iac/infrastructure/index.ts",
+            "provider": "azure"
+          }
         }
       }
     },
@@ -176,6 +201,23 @@
             "jestConfig": "apps/api/jest.config.js",
             "tsConfig": "apps/api/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@dev-thought/nx-deploy-it:deploy",
+          "options": {
+            "main": "apps/api/infrastructure/index.ts",
+            "provider": "azure",
+            "pulumi": {
+              "azure:location": "northcentralus"
+            }
+          }
+        },
+        "destroy": {
+          "builder": "@dev-thought/nx-deploy-it:destroy",
+          "options": {
+            "main": "apps/api/infrastructure/index.ts",
+            "provider": "azure"
           }
         }
       }
