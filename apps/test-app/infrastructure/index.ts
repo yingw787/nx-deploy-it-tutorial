@@ -16,7 +16,7 @@ const config = {
 const projectName = config.projectName;
 
 const contentBucket = new gcp.storage.Bucket('contentBucket', {
-  name: config.projectName,
+  name: config.projectName + "-911400",
   website: {
     mainPageSuffix: 'index.html',
     notFoundPage: 'index.html'

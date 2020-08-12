@@ -1,0 +1,6 @@
+encryptionsalt: v1:I+TBCtIZB2M=:v1:x3LDJzCbg6Sl7RZt:+zd2w69OLIEHH9+9GJAPugaJ2KtIlg==
+config:
+  gcp:project: braze-migration-poc-286216
+  test-app:customDomainName: www.example.com
+  test-app:distPath: /home/yingw787/src/advanced-deployments/dist/apps/test-app
+  test-app:projectName: test-app
