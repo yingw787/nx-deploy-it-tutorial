@@ -95,32 +95,6 @@
             "passWithNoTests": true,
             "setupFile": "apps/i-love-iac/src/test-setup.ts"
           }
-        },
-        "deploy": {
-          "builder": "@dev-thought/nx-deploy-it:deploy",
-          "options": {
-            "main": "apps/i-love-iac/infrastructure/index.ts",
-            "provider": "gcp",
-            "pulumi": {
-              "gcp:project": "braze-migration-poc",
-              "customDomainName": "www.example.com",
-              "useCdn": false
-            }
-          },
-          "configurations": {
-            "production": {
-              "pulumi": {
-                "useCdn": true
-              }
-            }
-          }
-        },
-        "destroy": {
-          "builder": "@dev-thought/nx-deploy-it:destroy",
-          "options": {
-            "main": "apps/i-love-iac/infrastructure/index.ts",
-            "provider": "gcp"
-          }
         }
       }
     },
@@ -202,24 +176,6 @@
             "jestConfig": "apps/api/jest.config.js",
             "tsConfig": "apps/api/tsconfig.spec.json",
             "passWithNoTests": true
-          }
-        },
-        "deploy": {
-          "builder": "@dev-thought/nx-deploy-it:deploy",
-          "options": {
-            "main": "apps/api/infrastructure/index.ts",
-            "provider": "gcp",
-            "pulumi": {
-              "gcp:project": "braze-migration-poc",
-              "gcp:region": "us-east4"
-            }
-          }
-        },
-        "destroy": {
-          "builder": "@dev-thought/nx-deploy-it:destroy",
-          "options": {
-            "main": "apps/api/infrastructure/index.ts",
-            "provider": "gcp"
           }
         }
       }
