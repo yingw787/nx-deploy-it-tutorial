@@ -1,0 +1,6 @@
+encryptionsalt: v1:yO3N1YfXJfk=:v1:h/bdHiC43l5YZCgS:mqXjfRtfD+z+c+p6PU99rz61vNnSTg==
+config:
+  gcp:project: braze-migration-poc-286216
+  i-love-iac:customDomainName: www.example.com
+  i-love-iac:distPath: /home/yingw787/src/advanced-deployments/dist/apps/i-love-iac
+  i-love-iac:projectName: i-love-iac
