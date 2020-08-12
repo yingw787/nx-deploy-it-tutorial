@@ -3,7 +3,6 @@ import * as pulumi from '@pulumi/pulumi';
 import { readdirSync, statSync } from 'fs';
 import * as mime from 'mime';
 import { basename } from 'path';
-import { interpolate } from '@pulumi/pulumi';
 
 const stackConfig = new pulumi.Config();
 const config = {
@@ -17,7 +16,7 @@ const config = {
 const projectName = config.projectName;
 
 const contentBucket = new gcp.storage.Bucket('contentBucket', {
-  name: config.customDomainName,
+  name: config.projectName,
   website: {
     mainPageSuffix: 'index.html',
     notFoundPage: 'index.html'
@@ -64,15 +63,3 @@ crawlDirectory(config.distPath, (filePath: string) => {
     { dependsOn: oacResource }
   );
 });
-
-if (config.useCdn) {
-  const cdnEndpointResource = new gcp.compute.BackendBucket(
-    `${projectName}-cbb`,
-    {
-      bucketName: contentBucket.name,
-      enableCdn: true
-    }
-  );
-}
-
-export const endpoint = interpolate`https://${config.customDomainName}`;
