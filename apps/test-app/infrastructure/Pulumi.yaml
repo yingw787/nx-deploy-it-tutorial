@@ -1,0 +1,3 @@
+name: test-app
+runtime: nodejs
+description: Infrastructure as Code based on Pulumi - HAND CONFIGURED TO BE LIKE @dev-thought/nx-deploy-it

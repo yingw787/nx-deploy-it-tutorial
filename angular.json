@@ -308,6 +308,32 @@
             "tsConfig": "apps/test-app/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@dev-thought/nx-deploy-it:deploy",
+          "options": {
+            "main": "apps/test-app/infrastructure/index.ts",
+            "provider": "gcp",
+            "pulumi": {
+              "gcp:project": "braze-migration-poc-286216",
+              "customDomainName": "www.example.com",
+              "useCdn": false
+            }
+          },
+          "configurations": {
+            "production": {
+              "pulumi": {
+                "useCdn": true
+              }
+            }
+          }
+        },
+        "destroy": {
+          "builder": "@dev-thought/nx-deploy-it:destroy",
+          "options": {
+            "main": "apps/test-app/infrastructure/index.ts",
+            "provider": "gcp"
+          }
         }
       }
     },
