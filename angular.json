@@ -107,7 +107,7 @@
             "main": "apps/i-love-iac/infrastructure/index.ts",
             "provider": "gcp",
             "pulumi": {
-              "gcp:project": "braze-migration-poc",
+              "gcp:project": "braze-migration-poc-286216",
               "customDomainName": "www.example.com",
               "useCdn": false
             }
