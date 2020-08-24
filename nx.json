@@ -34,6 +34,13 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "i-love-iac-2": {
+      "tags": []
+    },
+    "i-love-iac-2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["i-love-iac-2"]
     }
   }
 }
