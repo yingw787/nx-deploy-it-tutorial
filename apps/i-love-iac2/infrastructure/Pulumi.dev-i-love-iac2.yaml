@@ -1,0 +1,5 @@
+encryptionsalt: v1:CaHLKFVK8Gk=:v1:ALSRbJALZcUemgvR:5DKil13scHnV2GrI6WPRtJCnIC72rQ==
+config:
+  i-love-iac2:customDomainName: www.example.com
+  i-love-iac2:distPath: /home/yingw787/src/advanced-deployments/dist/apps/i-love-iac2
+  i-love-iac2:projectName: i-love-iac2
