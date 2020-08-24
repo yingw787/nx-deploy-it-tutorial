@@ -356,6 +356,125 @@
           }
         }
       }
+    },
+    "i-love-iac2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/i-love-iac2",
+      "sourceRoot": "apps/i-love-iac2/src",
+      "prefix": "advanced-deployments",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/i-love-iac2",
+            "index": "apps/i-love-iac2/src/index.html",
+            "main": "apps/i-love-iac2/src/main.ts",
+            "polyfills": "apps/i-love-iac2/src/polyfills.ts",
+            "tsConfig": "apps/i-love-iac2/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/i-love-iac2/src/favicon.ico",
+              "apps/i-love-iac2/src/assets"
+            ],
+            "styles": ["apps/i-love-iac2/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/i-love-iac2/src/environments/environment.ts",
+                  "with": "apps/i-love-iac2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "i-love-iac2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "i-love-iac2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "i-love-iac2:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/i-love-iac2/tsconfig.app.json",
+              "apps/i-love-iac2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/i-love-iac2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/i-love-iac2/jest.config.js",
+            "tsConfig": "apps/i-love-iac2/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/i-love-iac2/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "i-love-iac2-e2e": {
+      "root": "apps/i-love-iac2-e2e",
+      "sourceRoot": "apps/i-love-iac2-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/i-love-iac2-e2e/cypress.json",
+            "tsConfig": "apps/i-love-iac2-e2e/tsconfig.e2e.json",
+            "devServerTarget": "i-love-iac2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "i-love-iac2:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/i-love-iac2-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/i-love-iac2-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {
