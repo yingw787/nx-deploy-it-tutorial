@@ -446,6 +446,31 @@
             "passWithNoTests": true,
             "setupFile": "apps/i-love-iac2/src/test-setup.ts"
           }
+        },
+        "deploy": {
+          "builder": "@dev-thought/nx-deploy-it:deploy",
+          "options": {
+            "main": "apps/i-love-iac2/infrastructure/index.ts",
+            "provider": "gcp",
+            "pulumi": {
+              "customDomainName": "www.example.com",
+              "useCdn": false
+            }
+          },
+          "configurations": {
+            "production": {
+              "pulumi": {
+                "useCdn": true
+              }
+            }
+          }
+        },
+        "destroy": {
+          "builder": "@dev-thought/nx-deploy-it:destroy",
+          "options": {
+            "main": "apps/i-love-iac2/infrastructure/index.ts",
+            "provider": "gcp"
+          }
         }
       }
     },
